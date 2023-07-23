@@ -1,10 +1,10 @@
 import { MongoClient } from 'mongodb';
 
-const DB_NAME = 'fsa-members-only';
+const DB_NAME = 'members-only-db';
 
 export const db = {
 	_dbClient: null,
-	connect: async function(url) {
+	connect: async function (url) {
 		const client = await MongoClient.connect(url, {
 			maxPoolSize: 10,
 			useNewUrlParser: true,
@@ -12,7 +12,7 @@ export const db = {
 		});
 		this._dbClient = client;
 	},
-	getConnection: function() {
+	getConnection: function () {
 		if (!this._dbClient) {
 			console.log('You need to call the connect function first!');
 			process.exit(1);

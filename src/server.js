@@ -13,6 +13,7 @@ const app = express();
 app.use(express.json());
 
 routes.forEach(route => {
+	console.log('route', route);
 	app[route.method](route.path, route.handler);
 });
 
