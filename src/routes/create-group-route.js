@@ -10,7 +10,6 @@ export const createGroupRoute = {
 
     const authUser = await admin.auth().verifyIdToken(token);
     const newGroupId = await createGroup(name, authUser.user_id);
-    console.log('newGroupId', newGroupId);
 
     res.status(200).json(newGroupId);
   },

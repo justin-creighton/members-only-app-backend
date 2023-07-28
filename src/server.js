@@ -2,7 +2,7 @@ import express from 'express';
 import { routes } from './routes';
 import { db } from './db';
 import * as admin from 'firebase-admin';
-import credentials from "./credentials.json";
+import credentials from "./configs/credentials.json";
 
 admin.initializeApp({
 	credential: admin.credential.cert(credentials),
@@ -13,7 +13,6 @@ const app = express();
 app.use(express.json());
 
 routes.forEach(route => {
-	console.log('route', route);
 	app[route.method](route.path, route.handler);
 });
 
