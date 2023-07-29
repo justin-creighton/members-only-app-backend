@@ -1,7 +1,7 @@
 import {db} from './db';
 import {getUser} from "./get-user";
 
-export const getRequestForGroup = async (groupId) => {
+export const getRequestsForGroup = async (groupId) => {
     const connection = db.getConnection();
     const requests = await connection.collection('requests').find({groupId}).toArray();
     const usersForRequests = await Promise.all(
@@ -10,7 +10,7 @@ export const getRequestForGroup = async (groupId) => {
     const populatedRequests = requests.map((group, i) => {
         return {
             ...group,
-            userName: usersForRequests[i].fullName,
+            userName: usersForRequests[i]['fullName'],
         }
     })
 

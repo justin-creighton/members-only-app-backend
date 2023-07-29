@@ -7,7 +7,7 @@ export { createGroup } from './create-group';
 export { rejectRequest } from './reject-request'
 export { acceptRequest } from './accept-request'
 export { getRequest } from './get-request'
-export { getRequestForGroup } from './get-request-for-group'
+export { getRequestsForGroup } from './get-request-for-group'
 export { getGroup } from './get-group'
 export { getMemberPopulatedGroup } from './get-member-populated-group'
 export { getMessagesForGroup } from './get-messages-for-group'

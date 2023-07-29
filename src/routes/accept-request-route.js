@@ -15,7 +15,7 @@ export const acceptRequestRoute = {
 
         if(!userAuth || group.ownerId !== userAuth.user_id) {
             return res.status(400).json({
-                message: 'User is not group owner'
+                message: 'User is not group owner '
             });
         }
 
